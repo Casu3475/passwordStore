@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "pandoc": "^0.2.0",
+    "sudo": "^1.0.3"
+  }
+}
