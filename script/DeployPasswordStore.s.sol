@@ -13,3 +13,4 @@ contract DeployPasswordStore is Script {
         return passwordStore;
     }
 }
+

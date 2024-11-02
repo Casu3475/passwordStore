@@ -10,13 +10,16 @@ pragma solidity 0.8.18;
 contract PasswordStore {
     error PasswordStore__NotOwner();
 
+    // ------------------
     // STATE VARIABLES
+    // ------------------
     address private s_owner; // 0 
     // @audit the s_password vatriable is not actually private !
     string private s_password; // 1
 
-
+    // ------------------
     // EVENTS
+    // ------------------
     event SetNetPassword();
 
     constructor() {

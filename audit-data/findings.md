@@ -58,11 +58,11 @@ Due to this, the overall architecture of the contract should be rethought. One c
         vm.assume(randomAddress != owner); // make sure the random address is not the owner
         vm.prank(randomAddress); // Let's pretend that randomAddress is making the next transaction
         string memory expectedPassword = "myNewPassword";
-        passwordStore.setPassword(expectedPassword);
+        passwordStore.setPassword(expectedPassword); // call the setPassword function of passwordStore, passing in the expectedPassword ("myNewPassword") as the new password.
 
-        vm.prank(owner);
-        string memory actualPassword = passwordStore.getPassword();
-        assertEq(actualPassword, expectedPassword);
+        vm.prank(owner); // Let's pretend that the owner is making the next transaction
+        string memory actualPassword = passwordStore.getPassword(); // the owner calls the getPassword function of the passwordStore contract, which retrieves the currently stored password
+        assertEq(actualPassword, expectedPassword); // check that the actualPassword is equal to the expectedPassword
     }
 ```
 
@@ -79,7 +79,7 @@ run `forge test --mt test_anyone_can_set_password`
 
 ```
 
-### [I-3] The `PasswordStore::getPassword` natspec indicates a parameter that doesn't exist, causing the natspect to be incorrect
+### [I-1] The `PasswordStore::getPassword` natspec indicates a parameter that doesn't exist, causing the natspect to be incorrect
 
 **Description:**
 
@@ -92,7 +92,7 @@ run `forge test --mt test_anyone_can_set_password`
 
 ```
 
-The `PasswordStore::getPassword` function signature is `getPassword()` which the natspect say it should be `getPassword(string)`
+The `PasswordStore::getPassword` function signature is `getPassword()` which the napstec say it should be `getPassword(string)`
 
 **Impact:** the napstec is incorrect
 
@@ -102,8 +102,6 @@ The `PasswordStore::getPassword` function signature is `getPassword()` which the
 
 ```diff
 -     * @param newPassword The new password to set.
-
-
 ```
 
 ## [H-1] Likelihood & Impact:
