@@ -39,7 +39,6 @@ Due to this, the overall architecture of the contract should be rethought. One c
 
 ```javascript
      function setPassword(string memory newPassword) external {
-  @>    // @audit - there are no access control
         s_password = newPassword;
         emit SetNetPassword();
     }

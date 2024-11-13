@@ -15,7 +15,7 @@ contract PasswordStore {
     // ------------------
     address private s_owner; // 0 
     // @audit the s_password vatriable is not actually private !
-    string private s_password; // 1
+    string private s_password; // 1 
 
     // ------------------
     // EVENTS
