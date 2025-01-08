@@ -42,7 +42,6 @@ contract PasswordStoreTest is Test {
         vm.prank(owner); // Let's pretend that the owner is making the next transaction
         string memory actualPassword = passwordStore.getPassword(); // the owner calls the getPassword function of the passwordStore contract, which retrieves the currently stored password
         assertEq(actualPassword, expectedPassword); // check that the actualPassword is equal to the expectedPassword
+        // If actualPassword equals expectedPassword, it means the randomAddress was able to set the password, indicating a security flaw in the contract.
     }
-
-
 }
