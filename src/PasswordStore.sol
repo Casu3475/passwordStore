@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.28;
+pragma solidity 0.8.18; //q Is it the correct version of the Solidity compiler?
 
 /*
  * @author not-so-secure-dev
@@ -30,7 +30,7 @@ contract PasswordStore {
      * @notice This function allows only the owner to set a new password.
      * @param newPassword The new password to set.
      */
-     // @audit anyone can set the password
+     // @audit anyone can set the password - missing access control 
     function setPassword(string memory newPassword) external {
         s_password = newPassword;
         emit SetNetPassword();
